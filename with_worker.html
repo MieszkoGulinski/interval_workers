@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>fresh</title>
+</head>
+<body>
+  Go to new tab
+  <script>
+    var counter = 0;
+    var w = new Worker("tick_worker.js")
+    w.onmessage = function(){
+      counter++
+      document.title = ""+counter+" - message from worker"
+    }
+  </script>
+</body>
+</html>
